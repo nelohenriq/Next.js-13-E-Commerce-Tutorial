@@ -1,11 +1,13 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Next e-Commerce 13",
-  description: "Created by reldev",
+  description: "Next e-Commerce 13 by reldev",
 };
 
 export default function RootLayout({
@@ -15,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <main className="bg-slate-700 h-screen p-16">{children}</main>
+      </body>
     </html>
   );
 }
